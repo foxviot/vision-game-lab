@@ -9,7 +9,7 @@
 
 ## What runs today
 
-已实现键盘/鼠标移动、随机障碍、奖励球、碰撞结束、难度增长、重开与本地最高分。A/D 或方向键控制；鼠标在画布内移动也可控制。当前不含摄像头、姿态识别或 MediaPipe。
+已实现键盘/鼠标/触屏移动、随机障碍、奖励球、三条生命、粒子反馈、暂停、难度增长、重开与本地最高分。A/D 或方向键控制，P 暂停；鼠标在画布内移动也可控制。当前不含摄像头、姿态识别或 MediaPipe。
 
 ## Quick start
 
@@ -31,6 +31,6 @@ Open http://localhost:8000 then click Start / Restart
 
 ## Attribution
 
-[MDN Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) 为 API 参考。当前游戏代码为本仓库新增，不依赖外部引擎或第三方素材。
+详见 [ATTRIBUTION.md](ATTRIBUTION.md)。使用浏览器标准 Canvas/KeyboardEvent API；当前游戏代码为本仓库新增，不依赖外部引擎或第三方素材。
 
 本仓库新增代码采用 [MIT](LICENSE)，依赖库和数据保持各自许可证。本项目不代表上游官方项目。
