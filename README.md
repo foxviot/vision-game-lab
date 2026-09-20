@@ -1,39 +1,36 @@
-# Vision Game Lab
+# Vision Game Lab · Neon Dodge
 
-![Stage](https://img.shields.io/badge/stage-game_blueprint-10b981?style=flat-square) ![Focus](https://img.shields.io/badge/focus-interactive_vision-8b5cf6?style=flat-square)
+> 可直接玩的浏览器小游戏
 
-**Move. Play. See the feedback.**
+![Stage](https://img.shields.io/badge/stage-runnable_demo-10b981?style=flat-square)
+![License](https://img.shields.io/badge/license-MIT-0ea5e9?style=flat-square)
 
-手势与姿态驱动的游戏交互设计。计划连接摄像头识别与游戏控制，让玩家通过身体动作参与小游戏。当前仓库为设计蓝图，尚无可运行游戏。
 
-## Planned interaction loop
 
-```mermaid
-flowchart LR
- A[Camera] --> B[Pose landmarks]
- B --> C[Gesture mapping]
- C --> D[Game input]
- D --> E[Visual feedback]
+## What runs today
+
+已实现键盘/鼠标移动、随机障碍、奖励球、碰撞结束、难度增长、重开与本地最高分。A/D 或方向键控制；鼠标在画布内移动也可控制。当前不含摄像头、姿态识别或 MediaPipe。
+
+## Quick start
+
+```bash
+git clone https://github.com/foxviot/vision-game-lab.git
+cd vision-game-lab
+python -m http.server 8000
 ```
 
-| Layer | Planned scope |
-|---|---|
-| Vision | MediaPipe landmarks and confidence filtering |
-| Input | Gesture calibration, smoothing and keyboard fallback |
-| Game | A small obstacle-dodging or target-catching scene |
-| Telemetry | Input latency and dropped-frame display |
+## Custom input
 
-## Reference projects
+```text
+Open http://localhost:8000 then click Start / Restart
+```
 
-[MediaPipe](https://github.com/google-ai-edge/mediapipe) · [MonoGame](https://github.com/MonoGame/MonoGame) · [Babylon.js](https://github.com/BabylonJS/Babylon.js)
+## Results and limits
 
-Engine choice remains open; the first milestone will select one stack.
+样例输出来自实际运行。速度随硬件与依赖版本变化；示例结果不代表生产环境性能。默认运行不需要 API Key、GPU 或云服务。
 
-## Milestones
+## Attribution
 
-- [ ] Input protocol and calibration design
-- [ ] Keyboard-playable scene
-- [ ] Camera-controlled interaction
-- [ ] Gameplay recording and measured latency
+[MDN Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) 为 API 参考。当前游戏代码为本仓库新增，不依赖外部引擎或第三方素材。
 
-Camera processing is planned to run locally. Assets and upstream dependencies will be attributed in the implementation.
+本仓库新增代码采用 [MIT](LICENSE)，依赖库和数据保持各自许可证。本项目不代表上游官方项目。
